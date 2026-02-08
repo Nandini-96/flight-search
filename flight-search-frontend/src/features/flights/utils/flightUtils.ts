@@ -52,21 +52,13 @@ export const formatPrice = (price: number): string => {
   }).format(price);
 };
 
-/**
- * Get stop text
- * @example 0 -> "Direct"
- * @example 1 -> "1 stop"
- * @example 2 -> "2 stops"
- */
 export const getStopText = (stops: number): string => {
   if (stops === 0) return 'Direct';
   if (stops === 1) return '1 stop';
   return `${stops} stops`;
 };
 
-/**
- * Calculate layover category for display
- */
+
 export const getLayoverCategory = (minutes: number): {
   category: 'short' | 'moderate' | 'long';
   label: string;

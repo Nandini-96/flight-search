@@ -37,12 +37,12 @@ class DataLoader {
       const rawData = fs.readFileSync(absolutePath, 'utf-8');
       this.flightData = JSON.parse(rawData) as FlightData;
 
-      console.log(`✅ Loaded ${this.flightData.flights.length} flights from ${this.flightData.airports.length} airports`);
+      console.log(`Loaded ${this.flightData.flights.length} flights from ${this.flightData.airports.length} airports`);
 
       this.buildIndices();
-      console.log('✅ Built search indices');
+      console.log('Built search indices');
     } catch (error) {
-      console.error('❌ Failed to load flight data:', error);
+      console.error('Failed to load flight data:', error);
       throw new Error(`Failed to load flight data: ${error}`);
     }
   }

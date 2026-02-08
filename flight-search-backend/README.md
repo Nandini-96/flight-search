@@ -1,19 +1,17 @@
 # FlightFinder Backend API
 
-A production-ready flight connection search engine API that finds multi-stop itineraries with intelligent timezone handling and connection validation.
+A flight connection search engine API that finds flights with multiple layovers with timezone handling and connection validation.
 
-## 🎯 Features
+# Features
 
 - **Multi-Stop Search**: Find direct flights, 1-stop, and 2-stop connections
 - **Timezone Aware**: Accurate duration calculations across timezones
-- **Smart Connection Rules**: Validates minimum/maximum layovers for domestic and international connections
+- **Connection Rules**: Validates minimum/maximum layovers for domestic and international connections
 - **Fast Performance**: Optimized search with indexed data structures
-- **Type-Safe**: Full TypeScript implementation
 - **RESTful API**: Clean, intuitive endpoints
 - **Error Handling**: Comprehensive validation and error messages
-- **Production Ready**: Includes logging, compression, security headers
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Node.js** - Runtime environment
 - **Express** - Web framework
@@ -22,7 +20,7 @@ A production-ready flight connection search engine API that finds multi-stop iti
 - **Zod** - Runtime validation
 - **Jest** - Testing framework
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -47,7 +45,7 @@ data/
 └── flights.json         # Flight dataset
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+ 
@@ -71,21 +69,21 @@ npm run dev
 
 The API will be available at `http://localhost:3000`
 
-### Build for Production
+<!-- ### Build for Production
 
 ```bash
 # Build TypeScript
 npm run build
 
 # Start production server
-npm start
+npm start -->
 ```
 
-## 📚 API Endpoints
+## API Endpoints
 
 ### Search Flights
 
-Find flight itineraries between two airports.
+Find flights with multiple layovers between two airports.
 
 **Endpoint:** `GET /api/flights/search`
 
@@ -94,78 +92,6 @@ Find flight itineraries between two airports.
 - `destination` (required) - 3-letter IATA airport code (e.g., LAX)
 - `date` (required) - Date in YYYY-MM-DD format (e.g., 2024-03-15)
 
-**Example Request:**
-```bash
-curl "http://localhost:3000/api/flights/search?origin=JFK&destination=LAX&date=2024-03-15"
-```
-
-**Example Response:**
-```json
-{
-  "itineraries": [
-    {
-      "id": "uuid-here",
-      "segments": [
-        {
-          "flightNumber": "SP101",
-          "airline": "SkyPath Airways",
-          "origin": "JFK",
-          "destination": "LAX",
-          "departureTime": "2024-03-15T08:30:00-05:00",
-          "arrivalTime": "2024-03-15T11:45:00-08:00",
-          "duration": 315,
-          "price": 299.00
-        }
-      ],
-      "layovers": [],
-      "totalDuration": 315,
-      "totalPrice": 299.00,
-      "stops": 0
-    },
-    {
-      "id": "uuid-here",
-      "segments": [
-        {
-          "flightNumber": "SP201",
-          "airline": "SkyPath Airways",
-          "origin": "JFK",
-          "destination": "ORD",
-          "departureTime": "2024-03-15T09:00:00-05:00",
-          "arrivalTime": "2024-03-15T11:00:00-06:00",
-          "duration": 120,
-          "price": 189.00
-        },
-        {
-          "flightNumber": "SP202",
-          "airline": "SkyPath Airways",
-          "origin": "ORD",
-          "destination": "LAX",
-          "departureTime": "2024-03-15T12:30:00-06:00",
-          "arrivalTime": "2024-03-15T14:45:00-08:00",
-          "duration": 135,
-          "price": 229.00
-        }
-      ],
-      "layovers": [
-        {
-          "airport": "ORD",
-          "duration": 90,
-          "isDomestic": true
-        }
-      ],
-      "totalDuration": 345,
-      "totalPrice": 418.00,
-      "stops": 1
-    }
-  ],
-  "searchParams": {
-    "origin": "JFK",
-    "destination": "LAX",
-    "date": "2024-03-15"
-  },
-  "totalResults": 2
-}
-```
 
 ### Get Airports
 
@@ -173,46 +99,11 @@ List all available airports.
 
 **Endpoint:** `GET /api/flights/airports`
 
-**Example Request:**
-```bash
-curl "http://localhost:3000/api/flights/airports"
-```
-
-**Example Response:**
-```json
-{
-  "airports": [
-    {
-      "code": "JFK",
-      "name": "John F. Kennedy International",
-      "city": "New York",
-      "country": "US",
-      "timezone": "America/New_York"
-    }
-  ],
-  "total": 10
-}
-```
-
 ### Get Statistics
 
 Get dataset statistics.
 
 **Endpoint:** `GET /api/flights/stats`
-
-**Example Request:**
-```bash
-curl "http://localhost:3000/api/flights/stats"
-```
-
-**Example Response:**
-```json
-{
-  "totalAirports": 10,
-  "totalFlights": 10,
-  "airports": ["BOS", "CDG", "JFK", "LAX", "LHR", "NRT", "ORD", "SEA", "SFO", "SYD"]
-}
-```
 
 ### Health Check
 
@@ -220,21 +111,8 @@ Check API health status.
 
 **Endpoint:** `GET /api/health`
 
-**Example Request:**
-```bash
-curl "http://localhost:3000/api/health"
-```
 
-**Example Response:**
-```json
-{
-  "status": "ok",
-  "timestamp": "2024-03-15T12:00:00.000Z",
-  "dataLoaded": true
-}
-```
-
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -252,7 +130,7 @@ CORS_ORIGIN=*
 FLIGHTS_DATA_PATH=./data/flights.json
 ```
 
-## 🧮 Connection Rules
+## Connection Rules
 
 The system validates connections based on these rules:
 
@@ -270,7 +148,7 @@ The system validates connections based on these rules:
 - Example: JFK→ORD→LAX = domestic (all US)
 - Example: JFK→LHR→CDG = international (US→GB→FR)
 
-## 🧪 Testing
+## Testing
 
 ### Run Tests
 
@@ -293,7 +171,7 @@ The project includes tests for:
 - Domestic vs international detection
 - Search functionality (to be added)
 
-## 📊 Algorithm Overview
+## Algorithm Overview
 
 ### Search Strategy
 
@@ -324,7 +202,7 @@ The search algorithm uses a breadth-first approach:
 - **Early termination**: Skip invalid connections early
 - **Pre-computed metadata**: UTC times and durations calculated once
 
-## 🌍 Timezone Handling
+## Timezone Handling
 
 The system handles timezones correctly:
 
@@ -341,7 +219,7 @@ Arrival:   2024-03-15T17:30:00 (LA time)
 ↑ Arrives "before" departure in local time, but UTC is correct
 ```
 
-## 🐛 Error Handling
+## Error Handling
 
 ### Validation Errors (400)
 
@@ -376,7 +254,7 @@ Arrival:   2024-03-15T17:30:00 (LA time)
 }
 ```
 
-## 📝 Data Format
+## Data Format
 
 ### Airport Data
 
@@ -410,7 +288,7 @@ Arrival:   2024-03-15T17:30:00 (LA time)
 - Use airport's `timezone` field for conversions
 - Format: ISO 8601 without timezone
 
-## 🚦 Performance Considerations
+## Performance Considerations
 
 ### Current Performance
 
@@ -426,7 +304,7 @@ For larger datasets:
 - **Pagination**: Implement result pagination
 - **Rate Limiting**: Add request throttling
 
-## 🔐 Security
+## Security
 
 Current security measures:
 - **Helmet**: Security headers
@@ -434,7 +312,7 @@ Current security measures:
 - **Input Validation**: Zod schemas for all inputs
 - **Error Sanitization**: No stack traces in production
 
-## 📦 Deployment
+## Deployment
 
 ### Docker
 
@@ -459,25 +337,4 @@ CMD ["npm", "start"]
 - [ ] Enable HTTPS
 - [ ] Configure firewall
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
-## 🙋 Support
-
-For issues and questions:
-- Create an issue in the repository
-- Check existing documentation
-- Review test cases for examples
-
 ---
-
-**Built with ❤️ using Node.js, TypeScript, and Express**

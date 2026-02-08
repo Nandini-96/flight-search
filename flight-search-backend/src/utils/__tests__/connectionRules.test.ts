@@ -2,7 +2,6 @@ import {
   isDomesticConnection,
   isValidLayoverDuration,
   canConnect,
-  // LAYOVER_CONSTRAINTS,
 } from '../connectionRules';
 import { Airport, FlightWithMetadata } from '../../types';
 

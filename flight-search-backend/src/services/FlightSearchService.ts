@@ -233,11 +233,11 @@ class FlightSearchService {
       flightNumber: flight.flightNumber,
       airline: flight.airline,
       origin: flight.origin,
-      originCountry: flight.originAirport.country,  // ✅ Added country
-      originCity: flight.originAirport.city,        // ✅ Added city
+      originCountry: flight.originAirport.country,  //  Added country
+      originCity: flight.originAirport.city,        // Added city
       destination: flight.destination,
-      destinationCountry: flight.destinationAirport.country,  // ✅ Added country
-      destinationCity: flight.destinationAirport.city,        // ✅ Added city
+      destinationCountry: flight.destinationAirport.country,  // Added country
+      destinationCity: flight.destinationAirport.city,        // Added city
       departureTime: utcToLocalTime(
         flight.departureDateUTC,
         flight.originAirport.timezone
@@ -266,8 +266,8 @@ class FlightSearchService {
 
       layovers.push({
         airport: currentFlight.destination,
-        airportCity: currentFlight.destinationAirport.city,      // ✅ Added city
-        airportCountry: currentFlight.destinationAirport.country, // ✅ Added country
+        airportCity: currentFlight.destinationAirport.city,      // Added city
+        airportCountry: currentFlight.destinationAirport.country, // Added country
         duration: layoverDuration,
         isDomestic,
       });

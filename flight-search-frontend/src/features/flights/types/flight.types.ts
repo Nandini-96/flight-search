@@ -12,11 +12,11 @@ export interface FlightSegment {
   flightNumber: string;
   airline: string;
   origin: string;
-  originCountry: string;      // ✅ Added
-  originCity: string;          // ✅ Added
+  originCountry: string;      
+  originCity: string;          
   destination: string;
-  destinationCountry: string;  // ✅ Added
-  destinationCity: string;     // ✅ Added
+  destinationCountry: string;  
+  destinationCity: string;     
   departureTime: string; // ISO 8601 datetime
   arrivalTime: string;   // ISO 8601 datetime
   duration: number;      // minutes
@@ -25,8 +25,8 @@ export interface FlightSegment {
 
 export interface Layover {
   airport: string;
-  airportCity: string;     // ✅ Added
-  airportCountry: string;  // ✅ Added
+  airportCity: string;     
+  airportCountry: string;  
   duration: number; // minutes
   isDomestic: boolean;
 }

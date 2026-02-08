@@ -1,0 +1,176 @@
+{
+  "airports": [
+    {
+      "code": "JFK",
+      "name": "John F. Kennedy International",
+      "city": "New York",
+      "country": "US",
+      "timezone": "America/New_York"
+    },
+    {
+      "code": "LAX",
+      "name": "Los Angeles International",
+      "city": "Los Angeles",
+      "country": "US",
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "code": "ORD",
+      "name": "O'Hare International",
+      "city": "Chicago",
+      "country": "US",
+      "timezone": "America/Chicago"
+    },
+    {
+      "code": "SFO",
+      "name": "San Francisco International",
+      "city": "San Francisco",
+      "country": "US",
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "code": "BOS",
+      "name": "Logan International",
+      "city": "Boston",
+      "country": "US",
+      "timezone": "America/New_York"
+    },
+    {
+      "code": "SEA",
+      "name": "Seattle-Tacoma International",
+      "city": "Seattle",
+      "country": "US",
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "code": "LHR",
+      "name": "London Heathrow",
+      "city": "London",
+      "country": "GB",
+      "timezone": "Europe/London"
+    },
+    {
+      "code": "CDG",
+      "name": "Charles de Gaulle",
+      "city": "Paris",
+      "country": "FR",
+      "timezone": "Europe/Paris"
+    },
+    {
+      "code": "NRT",
+      "name": "Narita International",
+      "city": "Tokyo",
+      "country": "JP",
+      "timezone": "Asia/Tokyo"
+    },
+    {
+      "code": "SYD",
+      "name": "Sydney Kingsford Smith",
+      "city": "Sydney",
+      "country": "AU",
+      "timezone": "Australia/Sydney"
+    }
+  ],
+  "flights": [
+    {
+      "flightNumber": "SP101",
+      "airline": "SkyPath Airways",
+      "origin": "JFK",
+      "destination": "LAX",
+      "departureTime": "2026-03-15T08:30:00",
+      "arrivalTime": "2026-03-15T11:45:00",
+      "price": 299.00,
+      "aircraft": "A320"
+    },
+    {
+      "flightNumber": "SP102",
+      "airline": "SkyPath Airways",
+      "origin": "JFK",
+      "destination": "LAX",
+      "departureTime": "2026-03-15T14:00:00",
+      "arrivalTime": "2026-03-15T17:15:00",
+      "price": 349.00,
+      "aircraft": "B737"
+    },
+    {
+      "flightNumber": "SP201",
+      "airline": "SkyPath Airways",
+      "origin": "JFK",
+      "destination": "ORD",
+      "departureTime": "2026-03-15T09:00:00",
+      "arrivalTime": "2026-03-15T11:00:00",
+      "price": 189.00,
+      "aircraft": "A320"
+    },
+    {
+      "flightNumber": "SP202",
+      "airline": "SkyPath Airways",
+      "origin": "ORD",
+      "destination": "LAX",
+      "departureTime": "2026-03-15T12:30:00",
+      "arrivalTime": "2026-03-15T14:45:00",
+      "price": 229.00,
+      "aircraft": "B737"
+    },
+    {
+      "flightNumber": "SP301",
+      "airline": "SkyPath Airways",
+      "origin": "BOS",
+      "destination": "ORD",
+      "departureTime": "2026-03-15T08:00:00",
+      "arrivalTime": "2026-03-15T10:15:00",
+      "price": 179.00,
+      "aircraft": "A320"
+    },
+    {
+      "flightNumber": "SP302",
+      "airline": "SkyPath Airways",
+      "origin": "ORD",
+      "destination": "SEA",
+      "departureTime": "2026-03-15T11:00:00",
+      "arrivalTime": "2026-03-15T13:30:00",
+      "price": 259.00,
+      "aircraft": "B737"
+    },
+    {
+      "flightNumber": "SP401",
+      "airline": "SkyPath Airways",
+      "origin": "SFO",
+      "destination": "NRT",
+      "departureTime": "2026-03-15T11:00:00",
+      "arrivalTime": "2026-03-16T14:30:00",
+      "price": 899.00,
+      "aircraft": "B777"
+    },
+    {
+      "flightNumber": "SP501",
+      "airline": "SkyPath Airways",
+      "origin": "JFK",
+      "destination": "LHR",
+      "departureTime": "2026-03-15T18:00:00",
+      "arrivalTime": "2026-03-16T06:00:00",
+      "price": 599.00,
+      "aircraft": "B787"
+    },
+    {
+      "flightNumber": "SP502",
+      "airline": "SkyPath Airways",
+      "origin": "LHR",
+      "destination": "CDG",
+      "departureTime": "2026-03-16T08:30:00",
+      "arrivalTime": "2026-03-16T10:45:00",
+      "price": 129.00,
+      "aircraft": "A320"
+    },
+    {
+      "flightNumber": "SP601",
+      "airline": "SkyPath Airways",
+      "origin": "SYD",
+      "destination": "LAX",
+      "departureTime": "2026-03-15T22:00:00",
+      "arrivalTime": "2026-03-15T17:30:00",
+      "price": 1299.00,
+      "aircraft": "A380"
+    }
+  ]
+}

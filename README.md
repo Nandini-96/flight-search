@@ -13,7 +13,7 @@ FlightFinder helps users discover flight options by:
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Quick Start](#-quick-start)
 - [Architecture Overview](#-architecture-overview)
@@ -25,7 +25,7 @@ FlightFinder helps users discover flight options by:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -235,7 +235,7 @@ Direct:   O(1)        - Hash map lookup
 - Out of scope for assessment
 - Would add: JWT tokens, user sessions, protected routes
 
-### 7. **Logging & Monitoring**
+### 4. **Logging & Monitoring**
 
 **Decision**: Console logging only
 
@@ -290,9 +290,9 @@ Direct:   O(1)        - Hash map lookup
 ### Test Coverage
 
 **Backend**:
-- Connection rules: ✅ 10/10 tests passing
-- Timezone handling: ✅ Manual testing
-- Search algorithm: ⚠️ Should add unit tests
+- Connection rules: 10/10 tests passing
+- Timezone handling: Manual testing
+- Search algorithm: Should add unit tests
 
 ---
 

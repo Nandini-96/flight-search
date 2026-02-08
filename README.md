@@ -10,19 +10,6 @@ FlightFinder helps users discover flight options by:
 - **Exploring 2-stop routes** for maximum flexibility
 - **Validating layovers** with domestic (45 min) and international (90 min) minimum requirements
 - **Handling timezones** accurately for cross-timezone and date-line-crossing flights
-
----
-
-## Table of Contents
-
-- [Quick Start](#-quick-start)
-- [Architecture Overview](#-architecture-overview)
-- [Key Features](#-key-features)
-- [Architecture Decisions](#-architecture-decisions)
-- [Tradeoffs Considered](#-tradeoffs-considered)
-- [Future Improvements](#-future-improvements)
-
-
 ---
 
 ## Quick Start

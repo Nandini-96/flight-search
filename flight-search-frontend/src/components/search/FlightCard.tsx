@@ -43,12 +43,20 @@ export const FlightCard = ({ itinerary }: FlightCardProps) => {
               <div className="text-xs text-muted-foreground">
                 {formatDuration(totalDuration)}
               </div>
-              {/* Show if route is international */}
-              {!layovers.every(l => l.isDomestic) && (
-                <div className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-1">
-                  International
-                </div>
-              )}
+              {/* Show route type badge */}
+              {(() => {
+                // Check if origin and destination countries are different
+                const isInternational = firstSegment.originCountry !== lastSegment.destinationCountry;
+                return isInternational ? (
+                  <div className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-1">
+                    International
+                  </div>
+                ) : (
+                  <div className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded mt-1">
+                    Domestic
+                  </div>
+                );
+              })()}
             </div>
             
             <div className="text-center">
@@ -91,7 +99,7 @@ export const FlightCard = ({ itinerary }: FlightCardProps) => {
                         {formatAirlineName(segment.airline)} {segment.flightNumber}
                       </div>
                       <div className="text-sm text-muted-foreground">
-                        {segment.origin} ({segment.originCity}, {segment.originCountry}) → {segment.destination} ({segment.destinationCity}, {segment.destinationCountry})
+                        {segment.origin} → {segment.destination}
                       </div>
                     </div>
                     <div className="text-sm text-muted-foreground flex items-center gap-1">
@@ -100,13 +108,25 @@ export const FlightCard = ({ itinerary }: FlightCardProps) => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-6 text-sm">
+                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-3 w-3 text-muted-foreground" />
-                      <span>Depart: {formatTime(segment.departureTime)}</span>
+                      <MapPin className="h-3 w-3" />
+                      <span>{segment.originCity}, {segment.originCountry}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-3 w-3 text-muted-foreground" />
+                      <span>→</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-3 w-3" />
+                      <span>{segment.destinationCity}, {segment.destinationCountry}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-6 text-sm">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span>Depart: {formatTime(segment.departureTime)}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
                       <span>Arrive: {formatTime(segment.arrivalTime)}</span>
                     </div>
                     <div className="text-muted-foreground">
